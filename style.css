@@ -1,0 +1,26 @@
+
+header {
+  font-size: 40px;
+  text-align: center;
+}
+
+.table1 {
+  font-size: 25px;
+  text-decoration-color: white;
+  border-bottom-style: double;
+  border-top-style: double;
+  border-left-style: double;
+  border-right-style: double;
+}
+.table2 {
+    font-size: 25px;
+    text-decoration-color: white;
+    border-bottom-style: double;
+    border-top-style: double;
+    border-left-style: double;
+    border-right-style: double;
+  }
+body {
+    background-color: blanchedalmond;
+    background-image: 
+}
