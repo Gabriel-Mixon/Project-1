@@ -11,5 +11,6 @@ function buildQueryUrl() {
 
 }
 
-
+var input = $("#user-input");
+console.log(input);
 // id = "user-input" for the q =
