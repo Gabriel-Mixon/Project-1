@@ -2,6 +2,8 @@
 header {
   font-size: 40px;
   text-align: center;
+  border-bottom-style: solid;
+  background-color: ghostwhite;
 }
 
 .table1 {
@@ -11,6 +13,7 @@ header {
   border-top-style: double;
   border-left-style: double;
   border-right-style: double;
+  background-color: deepskyblue;
 }
 .table2 {
     font-size: 25px;
@@ -19,8 +22,9 @@ header {
     border-top-style: double;
     border-left-style: double;
     border-right-style: double;
+    background-color: deepskyblue;
   }
 body {
-    background-color: blanchedalmond;
+    background-color:  ghostwhite;
     background-image: 
 }
