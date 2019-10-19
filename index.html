@@ -1,106 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-     <!--Import Google Icon Font-->
-     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-     <!--Import materialize.css-->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    
+  <head>
+    <meta charset="UTF-8" />
+    <!--Import Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!--Import materialize.css-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+
     <title>Foodoku Project-1</title>
-</head>
+  </head>
 
-
-
-<body style="background-color: blanchedalmond;">
+  <body style="background-color: blanchedalmond;">
     <style>
-        
-        header {
-            font-size: 40px;
-            text-align: center;
+      header {
+        font-size: 40px;
+        text-align: center;
+      }
 
-        }
-        
-        
-        table {
-            font-size: 25px;
-            text-decoration-color: white;
-            border-bottom-style: double;
-            border-top-style: double; 
-            border-left-style: double;
-            border-right-style:double;
+      table {
+        font-size: 25px;
+        text-decoration-color: white;
+        border-bottom-style: double;
+        border-top-style: double;
+        border-left-style: double;
+        border-right-style: double;
+      }
+    </style>
 
-        }
-        
-        
-        
-        </style>
-
-    
     <header>Foodoku</header>
-    
-    <br/>
 
+    <br />
 
-   <!-- <div class="container">-->
-       
+    <!-- <div class="container">-->
 
-      <div class="container">
-          <div class="newDiv">
-             <div id="recipe"></div>
-             <form id="animal-form">
-               <label for="ingredient1, ingredient2, ingredient3,">Search Ingredients</label>
-               <br>
-               <input type="text" id="user-input">
-               
-               <br>
-               <br>
-              
-                 <button class="btn waves-effect large">Search</button> 
-                 <!--<input class= id="userinput" type="text" value="Submit">-->
+    <div class="container">
+      <div class="newDiv">
+        <div id="recipe"></div>
+        <form id="animal-form">
+          <label for="ingredient1, ingredient2, ingredient3,"
+            >Search Ingredients</label
+          >
+          <br />
+          <input type="text" id="user-input" />
 
-             </form>
-             
-        </div>
-<br/>
+          <br />
+          <br />
 
+          <button class="btn waves-effect large">Search</button>
+          <!--<input class= id="userinput" type="text" value="Submit">-->
+        </form>
+      </div>
+      <br />
 
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Item Name</th>
+            <th>Ingredients</th>
+          </tr>
+        </thead>
 
-        <table>
-                <thead>
-                  <tr>
-                      <th>Name</th>
-                      <th>Item Name</th>
-                      <th>Ingredients</th>
-                  </tr>
-                </thead>
-        
-                <tbody>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                </tbody>
-              </table>
-                    
-
+        <tbody>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
 
-
-
-
-
-</body>
+    <script src="project-1.js"></script>
+  </body>
 </html>
