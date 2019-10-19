@@ -1,0 +1,30 @@
+
+header {
+  font-size: 40px;
+  text-align: center;
+  border-bottom-style: solid;
+  background-color: ghostwhite;
+}
+
+.table1 {
+  font-size: 25px;
+  text-decoration-color: white;
+  border-bottom-style: double;
+  border-top-style: double;
+  border-left-style: double;
+  border-right-style: double;
+  background-color: deepskyblue;
+}
+.table2 {
+    font-size: 25px;
+    text-decoration-color: white;
+    border-bottom-style: double;
+    border-top-style: double;
+    border-left-style: double;
+    border-right-style: double;
+    background-color: deepskyblue;
+  }
+body {
+    background-color:  ghostwhite;
+    background-image: 
+}
