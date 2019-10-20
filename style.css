@@ -14,7 +14,7 @@ header {
   border-top-style: double;
   border-left-style: double;
   border-right-style: double;
-  background-color: deepskyblue;
+  background-color: cornsilk;
 }
 .table2 {
     font-size: 25px;
@@ -23,11 +23,10 @@ header {
     border-top-style: double;
     border-left-style: double;
     border-right-style: double;
-    background-color: deepskyblue;
+    background-color: cornsilk;
   }
 body {
-    background-color: orange;
-    background-image: 
+   
 }
 label {
   font-size: 15px;
