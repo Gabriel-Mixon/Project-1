@@ -53,11 +53,19 @@ function makeCorsRequest(input) {
         edamamResponse = JSON.parse(xhr.response);
         for (var i = 0; i < 5; i++) {
             console.log(edamamResponse.hits[i].recipe.label);
+            console.log(edamamResponse.hits[i].recipe.ingredients);
+            var ingredients = edamamResponse.hits[i].recipe.ingredients;
             var tables = $("<table>");
             var rows = $("<tr>");
             var body = $("<tbody>")
-            rows.text(edamamResponse.hits[i].recipe.label)
+            rows.text(edamamResponse.hits[i].recipe.label);
             tables.append(rows);
+            for (var j = 0; j < ingredients.length; j++) {
+                var ingredient = ingredients[j].text;
+                var data = $("<td>")
+                data.text(ingredient)
+                rows.append(data)
+            }
             $(".tableHolder").append(tables)
 
 
