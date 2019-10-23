@@ -35,8 +35,8 @@ function makeCorsRequest(input) {
     let app_id = "&app_id=16ae349c";
     let app_key = "&app_key=da6f303557b9ecd12d0710df3c225180";
     let recipe = "q=";
-    
-    
+
+
     // let quantity = "&quantity=5";
 
     var url = "https://api.edamam.com/search?" + recipe + input + app_id + app_key;
@@ -51,13 +51,18 @@ function makeCorsRequest(input) {
     xhr.onload = function () {
         var text = xhr.responseText;
         edamamResponse = JSON.parse(xhr.response);
-        console.log(edamamResponse.hits,url);
-        // console.log(xhr.response);
-        // console.log(xhr.response["q"]);
+        for (var i = 0; i < 5; i++) {
+            console.log(edamamResponse.hits[i].recipe.label);
+            var tables = $("<table>");
+            var rows = $("<tr>");
+            var body = $("<tbody>")
+            rows.text(edamamResponse.hits[i].recipe.label)
+            tables.append(rows);
+            $(".tableHolder").append(tables)
 
-        // input.innerHTML = text;
+
+        }
     };
-
     xhr.onerror = function () {
         // console.log('Woops, there was an error making the request.');
     };
@@ -78,10 +83,14 @@ $(".btn").on("click", function (event) {
     makeCorsRequest(input);
     for (const key in edamamResponse) {
         if (edamamResponse.hasOwnProperty(key)) {
-        //    console.log(key);
+            //    console.log(key);
         }
+
         // console.log(edamamResponse.key);
     }
+
+
+
 
 
     // $.ajax({
