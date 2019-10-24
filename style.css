@@ -1,9 +1,13 @@
 
-header {
-  font-size: 60px;
+.header {
+  font-size: 100px;
   text-align: center;
   border-bottom-style: solid;
-  background-color: rgb(9, 185, 9);
+  border-top-style: solid;
+  background-color: rgb(12, 143, 12);
+  border-radius: 10px;
+  width: 95%;
+  float: center;
   }
 
 .table1 {
