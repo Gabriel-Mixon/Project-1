@@ -105,19 +105,6 @@ $(".btn").on("click", function (event) {
 
         // console.log(edamamResponse.key);
     }
-
-
-
-
-
-    // $.ajax({
-    //     url: buildQueryUrl(input),
-    //     method: "GET"
-    // }).then(function (response) {
-    //     console.log(response);
-    // });
-
-
 });
 
 
