@@ -52,12 +52,17 @@ function makeCorsRequest(input) {
         var text = xhr.responseText;
         edamamResponse = JSON.parse(xhr.response);
         for (var i = 0; i < 5; i++) {
-            console.log(edamamResponse.hits[i].recipe.label);
-            console.log(edamamResponse.hits[i].recipe.ingredients);
+            // console.log(edamamResponse.hits[i].recipe.label);
+            // console.log(edamamResponse.hits[i].recipe.ingredients);
+            console.log(edamamResponse.hits[i].recipe.url)
             var ingredients = edamamResponse.hits[i].recipe.ingredients;
             var tables = $("<table>");
             var rows = $("<tr>");
-            var body = $("<tbody>")
+            var body = $("<tbody>");
+            var url = edamamResponse.hits[i].recipe.url;
+            var urlStorage = $("<td>");
+            var urlAnchor = $("<a href=\"" + url + "\" >");
+
             rows.text(edamamResponse.hits[i].recipe.label);
             tables.append(rows);
             for (var j = 0; j < ingredients.length; j++) {
@@ -66,6 +71,10 @@ function makeCorsRequest(input) {
                 data.text(ingredient)
                 rows.append(data)
             }
+            urlAnchor.text(" Recipe link!")
+            urlStorage.append(urlAnchor);
+            rows.append(urlStorage);
+
             $(".tableHolder").append(tables)
 
 
@@ -108,7 +117,7 @@ $(".btn").on("click", function (event) {
     //     console.log(response);
     // });
 
-    
+
 });
 
 
