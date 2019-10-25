@@ -6,8 +6,8 @@
   border-top-style: solid;
   background-color: rgb(12, 143, 12);
   border-radius: 10px;
-  width: 95%;
-  float: center;
+  width: 100%;
+  padding-left: 25px;
   }
 
 .table1 {
