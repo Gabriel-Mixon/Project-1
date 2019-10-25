@@ -25,9 +25,10 @@ header {
     background-color: cornsilk;
   }
   ::placeholder {
-    color: white;
-    box-shadow: inset 0 0 9px 4px black;
-    background-color: #ee6e73;
+    color: black;
+   /* box-shadow: inset 0 0 9px 4px black;*/
+   text-align: center;
+  ;
 }
 .btn {
   background-color: rgba(0,0,0,0.42);
@@ -36,7 +37,7 @@ header {
 #user-input {
     font-size: 25px;
     /* text-shadow: 0 0 0px black; */
-    color: #333;
+    color: #333;*
     text-align: center;
 }
 tr {
