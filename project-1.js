@@ -1,15 +1,4 @@
-// function buildQueryUrl(input) {
-//     var queryURL = "https://api.edamam.com/search?";
-//     var appKey = "&app_key=${da6f303557b9ecd12d0710df3c225180}";
-//     var appID = "&app_id=${16ae349c}";
-//     var search = "q=";
-//     var quantity = "&quantity=5";
 
-//     var fullQuery = queryURL + search + input + appID + appKey + quantity
-
-//     return fullQuery
-
-// }
 var edamamResponse = {};
 
 function createCORSRequest(method, url) {
@@ -62,6 +51,8 @@ function makeCorsRequest(input) {
             var url = edamamResponse.hits[i].recipe.url;
             var urlStorage = $("<td>");
             var urlAnchor = $("<a href=\"" + url + "\" >");
+            var button = $("<button>");
+            var buttonStorage = $("<td>")
 
             rows.text(edamamResponse.hits[i].recipe.label);
             tables.append(rows);
@@ -75,9 +66,16 @@ function makeCorsRequest(input) {
             urlStorage.append(urlAnchor);
             rows.append(urlStorage);
 
+            button.addClass("dynamic");
+            button.text("please show up")
+            buttonStorage.append(button);
+            rows.append(buttonStorage);
+
+
+
             $(".tableHolder").append(tables)
 
-
+            
         }
     };
     xhr.onerror = function () {
@@ -92,10 +90,9 @@ function makeCorsRequest(input) {
 
 
 $(".btn").on("click", function (event) {
+    $(".tableHolder").empty();
     event.preventDefault();
     var input = $("#user-input").val().trim();
-    // console.log("clicked");
-    // console.log(input);
 
     makeCorsRequest(input);
     for (const key in edamamResponse) {
