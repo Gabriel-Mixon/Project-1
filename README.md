@@ -18,3 +18,10 @@ Back-end:
 Gabe 
 Jarez
 
+Instruction:
+
+
+1. Enter up to three ingredients
+2. Click Search
+3. Find a reipe you like and click the link
+4. Enjoy
