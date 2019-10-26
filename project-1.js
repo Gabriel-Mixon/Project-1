@@ -106,6 +106,7 @@ $(".btn").on("click", function (event) {
 });
 
 $(".tableHolder").on("click", ".dynamic", function () {
+    console.log("clicked")
     function createCORSRequest(method, url) {
         var xhr = new XMLHttpRequest();
         if ("withCredentials" in xhr) {
