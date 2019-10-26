@@ -39,7 +39,7 @@
 }
 
 a {
-  color: red;
+  color: skyblue;
   text-decoration: none;
   -webkit-tap-highlight-color: transparent;
 }
@@ -50,11 +50,14 @@ a {
     color: #333;
     text-align: center;
 }
-tr {
+
+.tableHolder {
   border-bottom: 1px solid rgba(0,0,0,0.12);
   color: #333;
   background-color: rgba(0,0,0,0.14);
   font-size: 20px;
+  font-family: 'Abril Fatface', cursive;
+  word-wrap: break-word;
   
 }
 @import url("https://fonts.googleapis.com/css?family=Sacramento&display=swap");
