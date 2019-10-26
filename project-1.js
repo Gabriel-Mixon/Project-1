@@ -68,7 +68,7 @@ function makeCorsRequest(input) {
 
             button.addClass("dynamic");
             button.text("please show up")
-            button.attr("data-nutrients",edamamResponse.hits[i].recipe.totalNutrients)
+            button.attr("data-nutrients",JSON.stringify(edamamResponse.hits[i].recipe.totalNutrients))
             buttonStorage.append(button);
             rows.append(buttonStorage);
         
@@ -81,7 +81,7 @@ function makeCorsRequest(input) {
             // console.log(event)
             console.log(this)
             var nutrients = $(this).attr("data-nutrients")
-            console.log(JSON.parse(JSON.stringify(nutrients)))
+            console.log(JSON.parse(nutrients))
             
           
         });
