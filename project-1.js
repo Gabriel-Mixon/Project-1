@@ -14,7 +14,7 @@ function createCORSRequest(method, url) {
         // CORS not supported.
         xhr = null;
     }
-    console.log(xhr);
+    // console.log(xhr);
     return xhr;
 
 }
@@ -43,7 +43,7 @@ function makeCorsRequest(input) {
         for (var i = 0; i < 5; i++) {
             // console.log(edamamResponse.hits[i].recipe.label);
             // console.log(edamamResponse.hits[i].recipe.ingredients);
-            console.log(edamamResponse.hits[i].recipe.url)
+            console.log(edamamResponse.hits[i].recipe.totalNutrients)
             var ingredients = edamamResponse.hits[i].recipe.ingredients;
             var tables = $("<table>");
             var rows = $("<tr>");
@@ -68,15 +68,24 @@ function makeCorsRequest(input) {
 
             button.addClass("dynamic");
             button.text("please show up")
+            button.attr("data-nutrients",JSON.stringify(edamamResponse.hits[i].recipe.totalNutrients))
             buttonStorage.append(button);
             rows.append(buttonStorage);
-
-
-
+        
             $(".tableHolder").append(tables)
+        
 
 
         }
+        $(".dynamic").on("click", function (event) {
+            // console.log(event)
+            console.log(this)
+            var nutrients = $(this).attr("data-nutrients")
+            console.log(JSON.parse(nutrients))
+            
+          
+        });
+
     };
     xhr.onerror = function () {
         // console.log('Woops, there was an error making the request.');
@@ -84,7 +93,7 @@ function makeCorsRequest(input) {
 
     input.innerHTML = 'Loading...';
     xhr.setRequestHeader('Content-Type', 'application/json');
-    console.log(recipe);
+    // console.log(recipe);
     xhr.send(recipe);
 }
 
@@ -131,7 +140,7 @@ $(".tableHolder").on("click", ".dynamic", function () {
         // let pre = document.getElementById('response');
 
         var ingrURL = "https://api.edamam.com/api/nutrition-details" + app_id + app_key + ingredientSearch + ingredients;
-        console.log(ingrURL)
+        // console.log(ingrURL)
 
         var xhr = createCORSRequest('POST', url);
         if (!xhr) {
@@ -142,10 +151,10 @@ $(".tableHolder").on("click", ".dynamic", function () {
         // Response handlers.
         xhr.onload = function () {
             var text = xhr.responseText;
-            console.log(text)
+            // console.log(text)
             var ingrResponse = JSON.parse(xhr.response);
             var ingrInfo = ingrResponse;
-            console.log(ingrInfo);
+            // console.log(ingrInfo);
         };
 
         xhr.onerror = function () {
