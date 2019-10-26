@@ -37,7 +37,7 @@ function makeCorsRequest(input) {
         return;
     }
     // Response handlers.
-    xhr.onload = function () {
+    xhr.onload = function (ingredients) {
         var text = xhr.responseText;
         edamamResponse = JSON.parse(xhr.response);
         for (var i = 0; i < 5; i++) {
@@ -75,7 +75,7 @@ function makeCorsRequest(input) {
 
             $(".tableHolder").append(tables)
 
-            
+
         }
     };
     xhr.onerror = function () {
@@ -88,6 +88,7 @@ function makeCorsRequest(input) {
     xhr.send(recipe);
 }
 
+var ingrResponse = {};
 
 $(".btn").on("click", function (event) {
     $(".tableHolder").empty();
@@ -102,6 +103,59 @@ $(".btn").on("click", function (event) {
 
         // console.log(edamamResponse.key);
     }
+});
+
+$(".tableHolder").on("click", ".dynamic", function () {
+    function createCORSRequest(method, url) {
+        var xhr = new XMLHttpRequest();
+        if ("withCredentials" in xhr) {
+            // XHR for Chrome/Firefox/Opera/Safari.
+            xhr.open(method, url, true);
+        } else if (typeof XDomainRequest != "undefined") {
+            // XDomainRequest for IE.
+            xhr = new XDomainRequest();
+            xhr.open(method, url);
+        } else {
+            // CORS not supported.
+            xhr = null;
+        }
+        return xhr;
+    }
+
+    // Make the actual CORS request.
+    function makeCorsRequest(ingredients) {
+        let app_id = "&f400704d";
+        let app_key = "&261f94eb78c5280f2b9776cbd6fe7e88"
+        let ingredientSearch = "&ingr="
+        // let pre = document.getElementById('response');
+
+        var ingrURL = "https://api.edamam.com/api/nutrition-details" + app_id + app_key + ingredientSearch + ingredients;
+        console.log(ingrURL)
+
+        var xhr = createCORSRequest('POST', url);
+        if (!xhr) {
+            alert('CORS not supported');
+            return;
+        }
+
+        // Response handlers.
+        xhr.onload = function () {
+            var text = xhr.responseText;
+            console.log(text)
+            var ingrResponse = JSON.parse(xhr.response);
+            var ingrInfo = ingrResponse;
+            console.log(ingrInfo);
+        };
+
+        xhr.onerror = function () {
+            alert('Woops, there was an error making the request.');
+        };
+
+        pre.innerHTML = 'Loading...';
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.send(recipe);
+    }
+
 });
 
 
