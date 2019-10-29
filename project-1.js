@@ -92,7 +92,7 @@ function makeCorsRequest(input) {
             var nutritionPlace = $(".ingrTableHolder")
             for (key in importantStuff) {
                 // console.log(key + ": " + importantStuff[key].quantity + " " + importantStuff[key].unit)
-                string = string + key + ": " + importantStuff[key].quantity + " " + importantStuff[key].unit + "\n"
+                string = string + importantStuff[key].label + ": " + importantStuff[key].quantity + " " + importantStuff[key].unit + "\n"
             }
             nutritionPlace.text(string);
 
