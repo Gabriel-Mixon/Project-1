@@ -62,7 +62,7 @@ function makeCorsRequest(input) {
                 data.text(ingredient)
                 rows.append(data)
             }
-            help.text(edamamResponse.hits[i].recipe.totalNutrients.FAT)
+            // help.text(edamamResponse.hits[i].recipe.totalNutrients.FAT)
             // help.append(rows)
             urlAnchor.text(" Recipe link!")
             urlStorage.append(urlAnchor);
