@@ -43,11 +43,11 @@ function makeCorsRequest(input) {
         for (var i = 0; i < 5; i++) {
             // console.log(edamamResponse.hits[i].recipe.label);
             // console.log(edamamResponse.hits[i].recipe.ingredients);
-            console.log(edamamResponse.hits[i].recipe.totalNutrients)
+            console.log(edamamResponse.hits[i].recipe.totalNutrients.FAT)
             var ingredients = edamamResponse.hits[i].recipe.ingredients;
             var tables = $("<table>");
             var rows = $("<tr>");
-            var body = $("<tbody>");
+            var help = $(".ingrTableHolder");
             var url = edamamResponse.hits[i].recipe.url;
             var urlStorage = $("<td>");
             var urlAnchor = $("<a href=\"" + url + "\" >");
@@ -62,18 +62,20 @@ function makeCorsRequest(input) {
                 data.text(ingredient)
                 rows.append(data)
             }
+            help.text(edamamResponse.hits[i].recipe.totalNutrients.FAT)
+            // help.append(rows)
             urlAnchor.text(" Recipe link!")
             urlStorage.append(urlAnchor);
             rows.append(urlStorage);
 
             button.addClass("dynamic");
-            button.text("please show up")
-            button.attr("data-nutrients",JSON.stringify(edamamResponse.hits[i].recipe.totalNutrients))
+            button.text("For more informaton than you need click me and look below:)")
+            button.attr("data-nutrients", JSON.stringify(edamamResponse.hits[i].recipe.totalNutrients))
             buttonStorage.append(button);
             rows.append(buttonStorage);
-        
+
             $(".tableHolder").append(tables)
-        
+
 
 
         }
@@ -81,9 +83,21 @@ function makeCorsRequest(input) {
             // console.log(event)
             console.log(this)
             var nutrients = $(this).attr("data-nutrients")
-            console.log(JSON.parse(nutrients))
-            
-          
+            console.log(JSON.parse(nutrients));
+            var importantStuff = (JSON.parse(nutrients))
+            var nutritionStuff = $(".ingrTableHolder")
+            // nutritionStuff.append(importantStuff)
+            nutritionStuff.text(nutrients)
+            var string = ""
+            var nutritionPlace = $(".ingrTableHolder")
+            for (key in importantStuff) {
+                // console.log(key + ": " + importantStuff[key].quantity + " " + importantStuff[key].unit)
+                string = string + key + ": " + importantStuff[key].quantity + " " + importantStuff[key].unit + "\n"
+            }
+            nutritionPlace.text(string);
+
+
+
         });
 
     };
@@ -151,10 +165,16 @@ $(".tableHolder").on("click", ".dynamic", function () {
         // Response handlers.
         xhr.onload = function () {
             var text = xhr.responseText;
-            // console.log(text)
+            console.log(text)
             var ingrResponse = JSON.parse(xhr.response);
             var ingrInfo = ingrResponse;
-            // console.log(ingrInfo);
+            console.log(ingrInfo);
+            var ingredientPlacement = $(".ingrTableHolder");
+            var rows = $("<tr>");
+            var data = $("<td>");
+            ingredientPlacement.append(ingrInfo);
+            data.append(ingredientPlacement);
+            rows.append(data);
         };
 
         xhr.onerror = function () {
