@@ -69,7 +69,8 @@ function makeCorsRequest(input) {
             rows.append(urlStorage);
 
             button.addClass("dynamic");
-            button.text("For more informaton than you need click me and look below:)")
+            button.text("Nutrition Facts")
+            
             button.attr("data-nutrients", JSON.stringify(edamamResponse.hits[i].recipe.totalNutrients))
             buttonStorage.append(button);
             rows.append(buttonStorage);

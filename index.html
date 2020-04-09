@@ -32,7 +32,7 @@
     <title>Foodoku Project-1</title>
     <style>
       body {
-        background-image: url("https://images.unsplash.com/photo-1543362906-acfc16c67564?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=701&q=80");
+        background-image: url("https://i1.wp.com/kirkmarket.ky/wp-content/uploads/2017/03/slide_survey.jpg?w=1240&ssl=1");
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-size: cover;
@@ -40,6 +40,7 @@
     </style>
   </head>
 
+  
   <body>
     <div class="header">
       <h1>Foodoku</h1>
@@ -69,6 +70,7 @@
           <!--<input class= id="userinput" type="text" value="Submit">-->
         </form>
       </div>
+    
 
 
 <div class="tableHolder"></div>
@@ -83,6 +85,26 @@
       <div class="ingrTableHolder"></div>
 
     </div>
+
+    <!-- Modal -->
+    <div id="resultsModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">X</button>
+            <h2 class="modal-title"><strong>Your most compatible friend</strong></h2>
+          </div>
+          <div class="modal-body">
+            <h2 id="nutrients"></h2>
+            <!-- <img id="matchImg" src ="" alt="" height="350" width="300"> -->
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" id="closeModal" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
     <br />
 
     <script src="project-1.js"></script>
