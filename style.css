@@ -66,6 +66,16 @@ b {
   word-wrap: break-word;
   
 }
+
+.ingrTableHolder {
+  /* border-bottom: 1px solid rgba(0,0,0,0.12); */
+  margin-top: 10px;
+  color: #333;
+  /*background-color: rgba(0,0,0,0.14);*/
+  font-size: 20px;
+  font-family: 'Abril Fatface', cursive;
+  word-wrap: break-word;
+}
 @import url("https://fonts.googleapis.com/css?family=Sacramento&display=swap");
 
 h1 {

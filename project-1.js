@@ -62,7 +62,7 @@ function makeCorsRequest(input) {
                 data.text(ingredient)
                 rows.append(data)
             }
-            help.text(edamamResponse.hits[i].recipe.totalNutrients.FAT)
+            // help.text(edamamResponse.hits[i].recipe.totalNutrients.FAT)
             // help.append(rows)
             urlAnchor.text(" Recipe link!")
             urlStorage.append(urlAnchor);
@@ -93,7 +93,7 @@ function makeCorsRequest(input) {
             var nutritionPlace = $(".ingrTableHolder")
             for (key in importantStuff) {
                 // console.log(key + ": " + importantStuff[key].quantity + " " + importantStuff[key].unit)
-                string = string + key + ": " + importantStuff[key].quantity + " " + importantStuff[key].unit + "\n"
+                string = string + importantStuff[key].label + ": " + importantStuff[key].quantity + " " + importantStuff[key].unit + "\n"
             }
             nutritionPlace.text(string);
 
