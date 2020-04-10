@@ -29,25 +29,29 @@
     background-color: cornsilk;
   }
   ::placeholder {
-    color: black;
+    color: rgba(255, 255, 0, 0.966);
    /* box-shadow: inset 0 0 9px 4px black;*/
    text-align: center;
   ;
 }
 .btn {
-  background-color: rgba(0,0,0,0.42);
+  background-color: rgba(23, 209, 223, 0.877);
 }
 
 a {
-  color:rgb(9, 9, 134);
+  color: rgb(0, 255, 242);
   text-decoration: none;
   -webkit-tap-highlight-color: transparent;
+}
+b {
+  color: white;
+  font-style: italic
 }
 
 #user-input {
     font-size: 25px;
     /* text-shadow: 0 0 0px black; */
-    color: #333;
+    color: white;
     text-align: center;
 }
 
@@ -55,7 +59,7 @@ a {
 .tableHolder {
  /* border-bottom: 1px solid rgba(0,0,0,0.12); */
   margin-top: 10px;
-  color: #333;
+  color: white;
   /*background-color: rgba(0,0,0,0.14);*/
   font-size: 20px;
   font-family: 'Abril Fatface', cursive;
@@ -86,6 +90,13 @@ h1 {
   text-align: center;
   animation: blink 12s infinite;
   -webkit-animation: blink 12s infinite;
+}
+.dynamic {
+  background-color: orangered;
+  white-space: nowrap;
+  font-style: oblique;
+  
+  
 }
 
 

@@ -1,7 +1,5 @@
-# Project-1
+# Welcome to Foodoku!
  
-=======
-Foodoku
 
 A site whose main function is to take ingredients from a user and then return to them a list of recipes, that will include links with full instructions, and the nutritional value of said recipes using two seperate APIs
 
@@ -23,9 +21,11 @@ Instruction:
 4. Enjoy
 
 Front-end:
-Alan 
+Alan, 
 Robin
 
 Back-end:
-Gabe 
+Gabe, 
 Jarez
+
+Open the website: https://jhowell89.github.io/Project-1/
